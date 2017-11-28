@@ -1,6 +1,6 @@
 <h1>All Users</h1>
 <% @users.each do |u| %>
-<p><%= link_to u.email, u %></p>
+<p><%= link_to u.username, u %></p>
 <div class="index-gallery">
 <% u.photos.each do |p| %>
   <!-- <%= link_to image_tag(p.url, :class => "main-img"), [u, p] %> -->

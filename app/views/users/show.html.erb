@@ -1,4 +1,4 @@
-<h1><%= @user.email %></h1>
+<h1>Photos from <%= @user.username %></h1>
 <small><%= link_to "Back to all users", users_path %></small>
 <% @user.photos.each do |photo| %>
 <div class="gallery-item">

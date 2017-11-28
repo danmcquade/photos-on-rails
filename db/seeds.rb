@@ -8,9 +8,9 @@
 User.destroy_all
 Photo.destroy_all
 
-dtm = User.create(email: "dtmcquade@gmail.com", password: "password")
-dan = User.create(email: "dan@danmcq.com", password: "password")
-inf = User.create(email: "info@danmcq.com", password: "password")
+dtm = User.create(email: "dtmcquade@gmail.com", username: "danmcquade", password: "password")
+dan = User.create(email: "dan@danmcq.com", username: "dannyboy", password: "password")
+inf = User.create(email: "info@danmcq.com", username: "infouser", password: "password")
 
 dtm.photos.create(title: "NYC Highline", url: File.open(File.join(Rails.root, '/app/assets/images/1.jpg')))
 dtm.photos.create(title: "Winter Beach", url: File.open(File.join(Rails.root, '/app/assets/images/2.jpg')))
