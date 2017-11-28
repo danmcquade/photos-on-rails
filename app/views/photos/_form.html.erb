@@ -1,0 +1,19 @@
+<%= form_for [@user, @photo], html: { multipart: true } do |f| %>
+  <div class="field">
+    <%= f.label :title %><br>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :url %><br>
+    <%= f.file_field :url %>
+    <% if f.object.url? %>
+      <%= image_tag f.object.url.url %>
+      <%= f.label :remove_image %>
+      <%= f.check_box :remove_image %>
+    <% end %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

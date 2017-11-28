@@ -1,0 +1,6 @@
+<h1><%= @photo.title %></h1>
+<p><small>By <%= link_to @user.email, @user %></small></p>
+<%= image_tag @photo.url, :class => "full-img" %>
+<% if @photo.user == current_user %>
+<p><%= link_to "Edit Photo", edit_user_photo_path(@user) %> | <%= link_to "Delete Photo", user_photo_path(@user, @photo), method: :delete, data: {confirm: "Are you sure you want to delete this photo?"} %> </p>
+<% end %>

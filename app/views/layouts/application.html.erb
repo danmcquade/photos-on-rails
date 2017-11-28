@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>PhotosOnRails</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <p><%= link_to "Home", root_path %></p>
+    <% if !current_user %>
+    <%= link_to "Register", new_user_registration_path %> | <%= link_to "Login", new_user_session_path %>
+    <% else %>
+    <%= link_to "Profile", current_user %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>
+    <p><%= link_to "Upload Photo", new_user_photo_path(current_user) %></p>
+    <% end %>
+    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p>
+    <%= yield %>
+  </body>
+</html>
