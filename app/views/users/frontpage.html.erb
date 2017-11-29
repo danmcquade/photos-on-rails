@@ -1,0 +1,6 @@
+
+<div class="index-gallery">
+<% @photos.each do |p| %>
+  <div class="index-gallery-img" style='background-image: url("<%= p.url %>")'><%= link_to ' ', [p.user, p] %></div>
+<% end %>
+</div>

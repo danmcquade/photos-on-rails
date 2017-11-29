@@ -9,15 +9,32 @@
   </head>
 
   <body>
-    <p><%= link_to "Home", root_path %></p>
-    <% if !current_user %>
-    <%= link_to "Register", new_user_registration_path %> | <%= link_to "Login", new_user_session_path %>
-    <% else %>
-    <%= link_to "Profile", current_user %> | <%= link_to "Logout", destroy_user_session_path, method: :delete %>
-    <p><%= link_to "Upload Photo", new_user_photo_path(current_user) %></p>
-    <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
-    <%= yield %>
+    <div class="navbar">
+      <ul>
+        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
+        <li class="<%= 'active' if current_page?(users_path) %>"><%= link_to "Browse", users_path %></li>
+        <% if !current_user %>
+        <li style="float:right" class="<%= 'active' if current_page?(new_user_registration_path) %>"><%= link_to "Register", new_user_registration_path %></li>
+        <li style="float:right" class="<%= 'active' if current_page?(new_user_session_path) %>"><%= link_to "Login", new_user_session_path %></li>
+        <% else %>
+        <li class="<%= 'active' if current_page?(current_user) %>"><%= link_to "My Photos", current_user %></li>
+        <li style="float:right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
+        <li style="float:right" class="<%= 'active' if current_page?(edit_user_registration_path(current_user)) %>"><%= link_to "Profile", edit_user_registration_path(current_user) %></li>
+        <li style="float:right" class="<%= 'active' if current_page?(new_user_photo_path(current_user)) %>"><%= link_to "Upload Photo", new_user_photo_path(current_user) %></li>
+        <% end %>
+      </ul>
+    </div>
+
+    <div class="container">
+      <p class="notice"><%= notice %></p>
+      <p class="alert"><%= alert %></p>
+      <div class="header">
+        <div class="header-logo">
+          <%= link_to image_tag("logo.png", :class => "header-img"), root_path %>
+          <h1><%= link_to "Photos-on-Rails", root_path %></h1>
+        </div>
+      </div>
+      <%= yield %>
+    </div>
   </body>
 </html>

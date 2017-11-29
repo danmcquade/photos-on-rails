@@ -1,10 +1,4 @@
 <h2>Edit Photo</h2>
-<%= form_for [@user, @photo] do |p| %>
-  <%= p.label :title %>
-  <%= p.text_field :title %>
+<%= render 'form', photo: @photo %>
 
-  <%= p.label :url %>
-  <%= p.text_field :url %>
-
-  <%= p.submit %>
-<% end %>
+<%= link_to 'Back', user_photos_path(@user) %>

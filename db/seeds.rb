@@ -22,4 +22,4 @@ dan.photos.create(title: "Dublin Bridge", url: File.open(File.join(Rails.root, '
 
 inf.photos.create(title: "Rehoboth Birds", url: File.open(File.join(Rails.root, '/app/assets/images/7.jpg')))
 inf.photos.create(title: "Washington Monument", url: File.open(File.join(Rails.root, '/app/assets/images/8.jpg')))
-inf.photos.create(title: "Glover Park", url: File.open(File.join(Rails.root, '/app/assets/images/9.jpg')))
+inf.photos.create(title: "Monument at Night", url: File.open(File.join(Rails.root, '/app/assets/images/9.jpg')))
