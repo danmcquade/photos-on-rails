@@ -53,15 +53,16 @@ a {
   padding: 0;
   overflow: hidden;
 }
-.active {
-  background-color: #cd0000;
-}
 .container {
   display: flex;
   flex-direction: column;
   align-items: center;
   max-width: 1024px;
   margin: 0 auto;
+  margin-bottom: 25px;
+}
+.active {
+  background-color: #cd0000;
 }
 .header {
   display: flex;
@@ -95,14 +96,14 @@ a {
 }
 .index-gallery-img {
   background-size: cover;
-  width: 300px;
+  width: 340px;
   height: 250px;
   display: flex;
   justify-content: center;
   align-items: center;
 }
 .index-gallery-img a {
-  width: 300px;
+  width: 340px;
   height: 250px;
   transition:all 0.2s ease-in-out;
 }
@@ -111,7 +112,7 @@ a {
   transition:all 0.2s ease-in-out;
 }
 .index-user {
-  width: 900px;
+  width: 99%;
   font-weight: 900;
   margin-top: 20px;
 }
@@ -140,4 +141,11 @@ a {
 }
 .full-title a {
   margin-left: 5px;
+}
+.comments-container {
+  width: 100%;
+}
+.single-comment {
+  margin-top: 10px;
+  margin-bottom: 20px;
 }

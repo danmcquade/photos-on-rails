@@ -4,6 +4,9 @@ Rails.application.routes.draw do
   root to: "users#frontpage"
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   resources :users do
-    resources :photos
+    resources :photos do
+      resources :comments
+    end
   end
+
 end
