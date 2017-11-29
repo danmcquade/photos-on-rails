@@ -4,7 +4,7 @@
     <%= f.text_field :title %>
   </div>
   <div class="field">
-    <%= f.label "Upload Image" %><br>
+    <%= f.label "Replace Uploaded Photo" %><br>
     <%= f.file_field :url %>
     <% if f.object.url? %>
       <%= image_tag f.object.url.url, :class => "full-img" %>

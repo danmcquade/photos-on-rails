@@ -19,6 +19,12 @@ body {
   margin: 0;
 }
 
+a {
+  color: #cd0000;
+  text-decoration: none;
+  font-weight: 900;
+}
+
 .navbar {
   width: 100%;
   background: #000000;
@@ -59,7 +65,7 @@ body {
 }
 .header {
   display: flex;
-  text-decoration: none;
+  oration: none;
   margin-bottom: 15px;
 }
 .header-logo {
@@ -76,11 +82,11 @@ body {
   font-size: 40px;
 }
 .header-logo a {
-  text-decoration: none;
   color: black;
 }
 .header-img {
   max-width: 120px;
+  margin-right: 10px;
 }
 .index-gallery {
   display: flex;
@@ -98,23 +104,40 @@ body {
 .index-gallery-img a {
   width: 300px;
   height: 250px;
+  transition:all 0.2s ease-in-out;
+}
+.index-gallery-img a:hover {
+  background-color: rgba(255,255,255,.5);
+  transition:all 0.2s ease-in-out;
 }
 .index-user {
   width: 900px;
   font-weight: 900;
   margin-top: 20px;
 }
-.index-user a {
-  text-decoration: none;
-  color: #cd0000;
+.user-gallery-title {
+  width: 100%;
 }
-.main-img {
-  max-width: 300px;
-  margin: 10px;
+.user-gallery {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-.gallery-img {
+.user-gallery-img {
   max-width: 500px;
 }
 .full-img {
   max-width: 1024px;
+}
+.full-title {
+  width: 100%;
+  margin: 10px 0px 10px 0px;
+}
+.full-title h3 {
+  display: inline;
+  margin-right: 5px;
+}
+.full-title a {
+  margin-left: 5px;
 }
