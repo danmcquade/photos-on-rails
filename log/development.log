@@ -26298,3 +26298,267 @@ Processing by UsersController#show as HTML
 Completed 200 OK in 26ms (Views: 21.4ms | ActiveRecord: 1.2ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-11-29 21:21:07 -0500
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#frontpage as HTML
+  Rendering users/frontpage.html.erb within layouts/application
+  [1m[36mPhoto Load (1.8ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 9]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/frontpage.html.erb within layouts/application (73.7ms)
+  [1m[36mUser Load (2.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 255ms (Views: 223.9ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/users/5/photos/9" for 127.0.0.1 at 2017-11-29 21:21:09 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"9"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (6.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 9], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered photos/show.html.erb within layouts/application (51.5ms)
+Completed 200 OK in 87ms (Views: 60.4ms | ActiveRecord: 15.4ms)
+
+
+Started GET "/users/5/photos/9" for 127.0.0.1 at 2017-11-29 21:21:58 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"5", "id"=>"9"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 9], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 9], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 9]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered photos/show.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 27ms (Views: 20.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 21:22:07 -0500
+Processing by UsersController#frontpage as HTML
+  Rendering users/frontpage.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 9]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  Rendered users/frontpage.html.erb within layouts/application (10.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 32ms (Views: 27.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/4/photos/4" for 127.0.0.1 at 2017-11-29 21:22:10 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 4], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.6ms)
+Completed 200 OK in 47ms (Views: 40.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/users/4/photos/4" for 127.0.0.1 at 2017-11-29 21:25:13 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 4], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.9ms)
+Completed 200 OK in 31ms (Views: 24.4ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/4/photos/4" for 127.0.0.1 at 2017-11-29 21:25:39 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 4], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (5.5ms)
+Completed 200 OK in 32ms (Views: 25.3ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-29 21:25:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY username ASC[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 3]]
+  Rendered users/index.html.erb within layouts/application (8.5ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 31.6ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/3" for 127.0.0.1 at 2017-11-29 21:25:44 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering users/show.html.erb within layouts/application
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT "photos".* FROM "photos" WHERE "photos"."user_id" = $1[0m  [["user_id", 3]]
+  Rendered users/show.html.erb within layouts/application (3.6ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 39ms (Views: 34.6ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/users/3/photos/1" for 127.0.0.1 at 2017-11-29 21:25:45 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered photos/show.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 43ms (Views: 35.6ms | ActiveRecord: 3.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-11-29 21:26:33 -0500
+Processing by UsersController#frontpage as HTML
+  Rendering users/frontpage.html.erb within layouts/application
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" ORDER BY RANDOM() LIMIT $1[0m  [["LIMIT", 9]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendered users/frontpage.html.erb within layouts/application (13.6ms)
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 42ms (Views: 37.3ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/4/photos/5" for 127.0.0.1 at 2017-11-29 21:26:35 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.7ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 5], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 36ms (Views: 28.5ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/users/4/photos/5" for 127.0.0.1 at 2017-11-29 21:26:52 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"5"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 5], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 43ms (Views: 21.8ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/users/4/photos/5" for 127.0.0.1 at 2017-11-29 21:27:28 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"5"}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 5], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 5]]
+  Rendered photos/show.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 27ms (Views: 20.9ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-29 21:27:36 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY username ASC[0m
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 3]]
+  Rendered users/index.html.erb within layouts/application (6.8ms)
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 31ms (Views: 27.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/users/4/photos/4" for 127.0.0.1 at 2017-11-29 21:27:38 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"4", "id"=>"4"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.3ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 4], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 4]]
+  Rendered photos/show.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 31ms (Views: 24.6ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/users" for 127.0.0.1 at 2017-11-29 21:27:42 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users" ORDER BY username ASC[0m
+  [1m[36mPhoto Load (0.6ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 3], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.4ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 4], ["LIMIT", 3]]
+  [1m[36mPhoto Load (0.5ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."user_id" = $1 LIMIT $2[0m  [["user_id", 5], ["LIMIT", 3]]
+  Rendered users/index.html.erb within layouts/application (9.3ms)
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+Completed 200 OK in 37ms (Views: 32.1ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users/3/photos/1" for 127.0.0.1 at 2017-11-29 21:27:44 -0500
+Processing by PhotosController#show as HTML
+  Parameters: {"user_id"=>"3", "id"=>"1"}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mPhoto Load (0.2ms)[0m  [1m[34mSELECT  "photos".* FROM "photos" WHERE "photos"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  Rendering photos/show.html.erb within layouts/application
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" INNER JOIN "favorites" ON "users"."id" = "favorites"."user_id" WHERE "favorites"."photo_id" = $1 AND "users"."id" = $2 LIMIT $3[0m  [["photo_id", 1], ["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."photo_id" = $1[0m  [["photo_id", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mCACHE User Load (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 5], ["LIMIT", 1]]
+  Rendered photos/show.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 38ms (Views: 30.6ms | ActiveRecord: 3.0ms)
+
+
