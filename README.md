@@ -1,24 +1,28 @@
-# README
+# Photos-on-Rails
+A photo sharing service created in Ruby on Rails. Live demo at:
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+[http://photos-on-rails.herokuapp.com/](http://photos-on-rails.herokuapp.com/)
 
-Things you may want to cover:
+![Photos-on-Rails Screenshot](https://danmcquade.github.io/photos-on-rails/preview.png "Photos-on-Rails Screenshot")
 
-* Ruby version
+## Technologies used
+Photos-on-Rails was created using Ruby on Rails. The app utilizes Amazon S3 for cloud-based storage of uploaded photos.
 
-* System dependencies
+## Approach Taken / Features
+The initial approach taken when creating the app was to start simple, creating just the basic required functionality, and then gradually add features along the way. The first step was to come up with an ERD in order to visualize how the data would be structured. Once this was in place, the basic functionality of the app was built out.
 
-* Configuration
+- Basic register/login functionality
+- Having a main gallery on the front page of the app
+- A 'Browse' page featuring various photos from users
+- A user gallery, showing all photos from a specific user
+- A showcase page for viewing individual images
+- The ability to upload, edit and delete photos
+- Comparing the buttons pressed to the generated solution
+- Keeping track of the score
 
-* Database creation
+With these basics in place, more advanced features were then added to improve and enhance the functionality of the site. Some of these advanced features which were implemented later in the development process included:
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+- Storing uploads to S3 on AWS
+- Adding the ability to comment on photos
+- Adding the ability to edit and delete comments
+- Creating a 'favorites' feature using a many-to-many model
