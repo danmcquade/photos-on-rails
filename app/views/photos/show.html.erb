@@ -1,5 +1,5 @@
 <div class="full-title">
-  <h3><%= @photo.title %></h3> by <%= link_to @user.username, @user %>
+  <div class="photo-title"><h3><%= @photo.title %></h3> by <%= link_to @user.username, @user %></div>
   <% if current_user %>
     <% if @photo.users.include? current_user %>
       <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, remove_favorite_user_photo_path(current_user, @photo), method: :delete, class: "fav", title: "Remove Favorite" %>

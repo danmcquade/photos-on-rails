@@ -171,6 +171,11 @@ a.no-fav {
 .full-title a {
   margin-left: 5px;
 }
+.photo-title {
+  display: inline;
+  position: relative;
+  top: 10px;
+}
 .single-comment {
   margin-top: 10px;
   margin-bottom: 20px;
