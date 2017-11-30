@@ -1,0 +1,5 @@
+<%= form_for [@user, @photo, @comment] do |f| %>
+  <h3><%= f.label "Edit Comment" %></h3>
+  <p><%= f.text_field :body, size: "100" %></p>
+  <%= f.submit %>
+<% end %>

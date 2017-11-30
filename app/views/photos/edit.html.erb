@@ -1,4 +1,4 @@
 <h2>Edit Photo</h2>
 <%= render 'form', photo: @photo %>
 
-<%= link_to 'Back to Photo', [@user, @photo] %>
+<%= link_to 'Back to Photo', [@photo.user, @photo] %>

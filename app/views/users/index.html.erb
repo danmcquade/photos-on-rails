@@ -1,5 +1,5 @@
 <% @users.each do |u| %>
-<div class="index-user">Photos by <%= link_to u.username, u %></p></div>
+<div class="user-index-title"><h3>Photos by <%= link_to u.username, u %></h3></div>
 <div class="index-gallery">
 <% u.photos.take(3).each do |p| %>
   <div class="index-gallery-img" style='background-image: url("<%= p.url %>")'><%= link_to ' ', [u, p] %></div>
