@@ -10,13 +10,10 @@
  * files in this directory. Styles in this file should be added after the last require_* statement.
  * It is generally better to create a new file per style scope.
  *
+ *= require font-awesome
  *= require_tree .
  *= require_self
  */
-
- /*
-  *= require font-awesome
-  */
 
 body {
   font-family: 'Helvetica', sans-serif;
@@ -142,7 +139,9 @@ a.no-fav {
   margin-top: 20px;
 }
 .user-gallery-title,
-.user-index-title {
+.user-index-title,
+.full-title,
+.comments-container {
   width: 100%;
 }
 .user-gallery {
@@ -163,7 +162,6 @@ a.no-fav {
   max-width: 1024px;
 }
 .full-title {
-  width: 100%;
   margin: 10px 0px 10px 0px;
 }
 .full-title h3 {
@@ -173,10 +171,28 @@ a.no-fav {
 .full-title a {
   margin-left: 5px;
 }
-.comments-container {
-  width: 100%;
-}
 .single-comment {
   margin-top: 10px;
   margin-bottom: 20px;
+}
+
+input#photo_title {
+  height: 20px;
+  font-size: 20px;
+}
+
+input#comment_body {
+  font-size: 15px;
+}
+input#user_email,
+input#user_username,
+input#user_password,
+input#user_password_confirmation,
+input#user_current_password {
+  font-size: 20px;
+  width: 300px;
+  background-image: none;
+}
+.field {
+  margin: 15px 0px 15px 0px;
 }

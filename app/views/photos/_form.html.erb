@@ -1,21 +1,23 @@
 <%= form_for [@user, @photo], html: { multipart: true } do |f| %>
   <div class="field">
-    <%= f.label "Photo Title" %><br>
+    <p><%= f.label "Photo Title" %></p>
     <%= f.text_field :title, size: "100" %>
   </div>
   <div class="field">
     <% if f.object.url? %>
-      <%= f.label "Replace Image" %><br>
+      <p><%= f.label "Replace Image" %></p>
     <% else %>
-      <%= f.label "Upload Image" %><br>
+      <p><%= f.label "Add Photo" %></p>
     <% end %>
     <%= f.file_field :url %>
+
+    <div class="actions">
+      <p><%= f.submit %></p>
+    </div>
+
     <% if f.object.url? %>
       <%= image_tag f.object.url.url, :class => "full-img" %>
     <% end %>
   </div>
 
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>
