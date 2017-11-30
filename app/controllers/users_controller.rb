@@ -12,4 +12,9 @@ class UsersController < ApplicationController
     @user = User.find(params[:id])
   end
 
+  def favorites
+    @user = current_user
+    @photos = @user.favorites
+  end
+
 end

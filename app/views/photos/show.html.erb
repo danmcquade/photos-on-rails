@@ -1,11 +1,19 @@
 <div class="full-title">
-<h3><%= @photo.title %></h3> by <%= link_to @user.username, @user %>
+  <h3><%= @photo.title %></h3> by <%= link_to @user.username, @user %>
+  <% if current_user %>
+    <% if @photo.users.include? current_user %>
+      <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, remove_favorite_user_photo_path(current_user, @photo), method: :delete, class: "fav", title: "Remove Favorite" %>
+    <% else %>
+      <%= link_to '<i class="fa fa-star-o" aria-hidden="true"></i>'.html_safe, add_favorite_user_photo_path(current_user, @photo), method: :post, class: "no-fav", title: "Add Favorite" %>
+    <% end %>
+  <% end %>
+  <%= link_to '<i class="fa fa-comments-o" aria-hidden="true"></i>'.html_safe, {anchor: "comments"}, class: "no-fav", title: "View Comments" %>
 </div>
 <%= image_tag @photo.url, :class => "full-img" %>
 <% if @photo.user == current_user %>
 <p><%= link_to "Edit Photo", edit_user_photo_path(@user) %> | <%= link_to "Delete Photo", user_photo_path(@user, @photo), method: :delete, data: {confirm: "Are you sure you want to delete this photo?"} %> </p>
 <% end %>
-<div class="comments-container">
+<div class="comments-container" id="comments">
   <h3>Comments</h3>
   <% if @photo.comments.length == 0 %>
     <strong><i><small>This photo doesn't have any comments yet</small></i></strong>

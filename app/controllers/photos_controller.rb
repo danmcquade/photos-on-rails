@@ -53,6 +53,22 @@ class PhotosController < ApplicationController
     redirect_to @user
   end
 
+  def add_favorite
+    @user = current_user
+    @photo = Photo.find(params[:id])
+
+    Favorite.create(user: @user, photo: @photo)
+    redirect_to request.referrer
+  end
+
+  def remove_favorite
+    @user = current_user
+    @photo = Photo.find(params[:id])
+
+    Favorite.find_by(user: @user, photo: @photo).destroy
+    redirect_to request.referrer
+  end
+
   private
 
   def photo_params

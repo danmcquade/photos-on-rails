@@ -14,6 +14,10 @@
  *= require_self
  */
 
+ /*
+  *= require font-awesome
+  */
+
 body {
   font-family: 'Helvetica', sans-serif;
   margin: 0;
@@ -23,6 +27,19 @@ a {
   color: #cd0000;
   text-decoration: none;
   font-weight: 900;
+}
+
+a.fav, a.no-fav {
+  text-decoration: none;
+  float: right;
+  font-size: 25px;
+}
+a.fav {
+  color: #cd0000;
+}
+
+a.no-fav {
+  color: black;
 }
 
 .navbar {

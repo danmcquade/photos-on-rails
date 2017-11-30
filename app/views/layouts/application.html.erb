@@ -18,6 +18,7 @@
         <li style="float:right" class="<%= 'active' if current_page?(new_user_session_path) %>"><%= link_to "Login", new_user_session_path %></li>
         <% else %>
         <li class="<%= 'active' if current_page?(current_user) %>"><%= link_to "My Photos", current_user %></li>
+        <li class="<%= 'active' if current_page?(favorites_user_path(current_user)) %>"><%= link_to "Favorites", favorites_user_path(current_user) %></li>
         <li style="float:right"><%= link_to "Logout", destroy_user_session_path, method: :delete %></li>
         <li style="float:right" class="<%= 'active' if current_page?(edit_user_registration_path(current_user)) %>"><%= link_to "Profile", edit_user_registration_path(current_user) %></li>
         <li style="float:right" class="<%= 'active' if current_page?(new_user_photo_path(current_user)) %>"><%= link_to "Upload Photo", new_user_photo_path(current_user) %></li>

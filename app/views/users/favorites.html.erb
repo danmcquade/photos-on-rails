@@ -1,0 +1,11 @@
+<div class="user-gallery-title">
+  <h3>Favorites for <%= current_user.username %></h3>
+</div>
+<div class="user-gallery">
+  <% @photos.each do |photo| %>
+  <div class="user-gallery-item">
+  <p><%= link_to photo.photo.title, [photo.photo.user, photo.photo] %> by <%= link_to photo.photo.user.username, users_path(photo.photo.user) %></p>
+  <%= link_to image_tag(photo.photo.url, :class => "user-gallery-img"), [photo.photo.user, photo.photo]  %>
+  </div>
+  <% end %>
+</div>
