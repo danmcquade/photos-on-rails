@@ -23,6 +23,7 @@ The initial approach taken when creating the app was to start simple, creating j
 With these basics in place, more advanced features were then added to improve and enhance the functionality of the site. Some of these advanced features which were implemented later in the development process included:
 
 - Storing uploads to S3 on AWS
+- Move S3 access keys/secret to environment variables
 - Adding the ability to comment on photos
 - Adding the ability to edit and delete comments
 - Creating a 'favorites' feature using a many-to-many model
