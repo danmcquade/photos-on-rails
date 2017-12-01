@@ -8,7 +8,7 @@
 User.destroy_all
 Photo.destroy_all
 
-dtm = User.create(email: "dtmcquade@gmail.com", username: "danmcquade", password: "password")
+dtm = User.create(email: "danmcquade@gmail.com", username: "danmcquade", password: "password")
 mike = User.create(email: "mikesmith@gmail.com", username: "mikesmith", password: "password")
 john = User.create(email: "johnjones@gmail.com", username: "johnjones", password: "password")
 pete = User.create(email: "petepeterson@gmail.com", username: "petepeterson", password: "password")
