@@ -17,8 +17,6 @@ The initial approach taken when creating the app was to start simple, creating j
 - A user gallery, showing all photos from a specific user
 - A showcase page for viewing individual images
 - The ability to upload, edit and delete photos
-- Comparing the buttons pressed to the generated solution
-- Keeping track of the score
 
 With these basics in place, more advanced features were then added to improve and enhance the functionality of the site. Some of these advanced features which were implemented later in the development process included:
 
