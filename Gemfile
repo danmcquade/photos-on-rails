@@ -57,4 +57,5 @@ gem 'carrierwave'
 gem 'fog'
 gem 'mini_magick'
 gem "font-awesome-rails"
+gem 'jquery-rails'
 gem "rails_12factor", group: :production

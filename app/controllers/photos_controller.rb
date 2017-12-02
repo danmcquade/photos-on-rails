@@ -58,8 +58,13 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
     Favorite.create(user: @user, photo: @photo)
-    flash[:notice] = "Photo added to favorites."
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html do
+        flash[:notice] = "Photo added to favorites."
+        redirect_to request.referrer
+      end
+      format.js { }
+    end
   end
 
   def remove_favorite
@@ -67,8 +72,13 @@ class PhotosController < ApplicationController
     @photo = Photo.find(params[:id])
 
     Favorite.find_by(user: @user, photo: @photo).destroy
-    flash[:notice] = "Photo removed from favorites."
-    redirect_to request.referrer
+    respond_to do |format|
+      format.html do
+        flash[:notice] = "Photo removed from favorites."
+        redirect_to request.referrer
+      end
+      format.js { }
+    end
   end
 
   private
