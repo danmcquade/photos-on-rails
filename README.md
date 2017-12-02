@@ -25,3 +25,4 @@ With these basics in place, more advanced features were then added to improve an
 - Adding the ability to comment on photos
 - Adding the ability to edit and delete comments
 - Creating a 'favorites' feature using a many-to-many model
+- Adding AJAX functionality to the 'favorites' feature
