@@ -4,7 +4,7 @@
     <% if @photo.users.include? current_user %>
       <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, remove_favorite_user_photo_path(current_user, @photo), remote: true, id: "favicon", method: :delete, class: "fav", title: "Remove Favorite" %>
     <% else %>
-      <%= link_to '<i class="fa fa-star" aria-hidden="true"></i>'.html_safe, add_favorite_user_photo_path(current_user, @photo), remote: true, id: "favicon", method: :post, class: "no-fav", title: "Add Favorite" %>
+      <%= link_to '<i class="fa fa-star-o" aria-hidden="true"></i>'.html_safe, add_favorite_user_photo_path(current_user, @photo), remote: true, id: "favicon", method: :post, class: "no-fav", title: "Add Favorite" %>
     <% end %>
   <% end %>
   <%= link_to '<i class="fa fa-comments-o" aria-hidden="true"></i>'.html_safe, {anchor: "comments"}, class: "no-fav", title: "View Comments" %>

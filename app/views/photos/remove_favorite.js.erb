@@ -1,4 +1,4 @@
-$('a[href*="remove_favorite"]').each(function() {
+$('a[href*="remove_favorite"]').each(function () {
   url = $(this).attr('href').replace('remove_favorite', 'add_favorite')
   $(this).attr('href', url)
   $(this).attr('data-method', 'post')
