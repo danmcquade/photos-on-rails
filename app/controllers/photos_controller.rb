@@ -57,13 +57,17 @@ class PhotosController < ApplicationController
     @user = current_user
     @photo = Photo.find(params[:id])
 
-    Favorite.create(user: @user, photo: @photo)
-    respond_to do |format|
-      format.html do
-        flash[:notice] = "Photo added to favorites."
-        redirect_to request.referrer
+    if current_user
+      Favorite.create(user: @user, photo: @photo)
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "Photo added to favorites."
+          redirect_to request.referrer
+        end
+        format.js { }
       end
-      format.js { }
+    else
+      flash[:alert] = "Not authorized to add favorites."
     end
   end
 
@@ -71,13 +75,17 @@ class PhotosController < ApplicationController
     @user = current_user
     @photo = Photo.find(params[:id])
 
-    Favorite.find_by(user: @user, photo: @photo).destroy
-    respond_to do |format|
-      format.html do
-        flash[:notice] = "Photo removed from favorites."
-        redirect_to request.referrer
+    if current_user
+      Favorite.find_by(user: @user, photo: @photo).destroy
+      respond_to do |format|
+        format.html do
+          flash[:notice] = "Photo removed from favorites."
+          redirect_to request.referrer
+        end
+        format.js { }
       end
-      format.js { }
+    else
+      flash[:alert] = "Not authorized to remove favorites."
     end
   end
 
@@ -86,6 +94,5 @@ class PhotosController < ApplicationController
   def photo_params
     params.require(:photo).permit(:title, :url)
   end
-
 
 end

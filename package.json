@@ -1,5 +1,11 @@
 {
   "name": "photos-on-rails",
   "private": true,
-  "dependencies": {}
+  "dependencies": {},
+
+  "standard": {
+  "globals": [
+    "$"
+  ]
+}
 }
