@@ -1,7 +1,7 @@
 # Photos-on-Rails
 A photo sharing service created with Ruby on Rails and utilizing Amazon S3 for photo storage. Live demo at:
 
-[http://photos-on-rails.herokuapp.com/](https://photos-on-rails.danmcq.com)
+[https://photos-on-rails.danmcq.com](https://photos-on-rails.danmcq.com)
 
 ![Photos-on-Rails Screenshot](https://raw.githubusercontent.com/danmcquade/photos-on-rails/master/preview.png "Photos-on-Rails Screenshot")
 
