@@ -218,6 +218,10 @@ and (-webkit-min-device-pixel-ratio: 2) {
     height: 200px;
   }
 
+  .full-img {
+    width: 85%;
+  }
+  
   .full-title, .full-img, .comments-container {
     max-width: 85%;
   }
