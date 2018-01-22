@@ -201,3 +201,41 @@ input#user_current_password {
 .field {
   margin: 15px 0px 15px 0px;
 }
+
+
+@media only screen
+and (min-device-width : 768px)
+and (max-device-width : 1024px)
+and (orientation : landscape)
+and (-webkit-min-device-pixel-ratio: 2) {
+  .index-gallery-img {
+    width: 300px;
+    height: 200px;
+  }
+
+  .index-gallery-img a {
+    width: 300px;
+    height: 200px;
+  }
+
+  .full-title, .full-img, .comments-container {
+    max-width: 85%;
+  }
+
+  .user-index-title, .user-gallery-title {
+    max-width: 88%;
+  }
+
+  .user-gallery {
+    max-width: 88%;
+  }
+
+  .user-gallery-img {
+    width: 400px;
+    height: 250px;
+  }
+  .user-gallery-img a {
+    width: 400px;
+    height: 250px;
+  }
+}
